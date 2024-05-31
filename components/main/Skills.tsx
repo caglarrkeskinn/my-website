@@ -16,83 +16,75 @@ import {
 
 const Skills = () => {
   return (
-    <section
-      id="skills"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-80 py-20"
-      style={{ transform: "scale(0.9" }}
-    >
+    <section id="skills" className="relative overflow-hidden pb-80 py-20">
       <SkillText />
 
-     
-
-
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-          <SparklesIcon className="text-[#bfffff] mr-[10px] h-10 w-10" />
-          <h1 className="Welcome-text text-[25px] font-bold">
-            Frontend Skills
-          </h1>
+      {/* Frontend Skills */}
+      <div className="skill-section mt-20">
+        <div className="flex items-center justify-center gap-3">
+          <SparklesIcon className="text-[#bfffff] h-10 w-10" />
+          <h1 className="Welcome-text text-[25px] font-bold">Frontend Skills</h1>
+        </div>
+        <div className="flex flex-wrap justify-around mt-4 gap-10">
+          {Frontend_skill.map((image, index) => (
+            <SkillDataProvider
+              key={index}
+              src={image.Image}
+              width={image.width}
+              height={image.height}
+              index={index}
+              description={image.skill_name}
+            />
+          ))}
+        </div>
       </div>
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-10 items-center ">
-        {Frontend_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-            description={image.skill_name}
-          />
-        ))}
+      {/* Backend Skills */}
+      <div className="skill-section mt-20">
+        <div className="flex items-center justify-center gap-3">
+          <SparklesIcon className="text-[#bfffff] h-10 w-10" />
+          <h1 className="Welcome-text text-[25px] font-bold">Backend Skills</h1>
+        </div>
+        <div className="flex flex-wrap justify-around mt-4 gap-10">
+          {Backend_skill.map((image, index) => (
+            <SkillDataProvider
+              key={index}
+              src={image.Image}
+              width={image.width}
+              height={image.height}
+              index={index}
+              description={image.skill_name}
+            />
+          ))}
+        </div>
       </div>
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center ">
-      <SparklesIcon className="text-[#bfffff] mr-[10px] h-10 w-10 " />
-      <h1 className="Welcome-text text-[25px] font-bold ">
-            Backend Skills
-          </h1>
+      {/* FullStack Skills */}
+      <div className="skill-section mt-20 mb-0">
+        <div className="flex items-center justify-center gap-3">
+          <SparklesIcon className="text-[#bfffff] h-10 w-10" />
+          <h1 className="Welcome-text text-[25px] font-bold">FullStack Skills</h1>
+        </div>
+        <div className="flex flex-wrap justify-around mt-4 gap-10">
+          {Full_stack.map((image, index) => (
+            <SkillDataProvider
+              key={index}
+              src={image.Image}
+              width={image.width}
+              height={image.height}
+              index={index}
+              description={image.skill_name}
+            />
+          ))}
+        </div>
       </div>
 
-
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-10 items-center">
-       
-        {Backend_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-            description={image.skill_name}
-          />
-        ))}
-      </div>
-
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-      <SparklesIcon className="text-[#bfffff] mr-[10px] h-10 w-10" />
-      <h1 className="Welcome-text text-[25px] font-bold">
-            FullStack Skills
-          </h1>
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-10 items-center">
-        {Full_stack.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-            description={image.skill_name}
-          />
-        ))}
-      </div>
-      
-
-      <div className="w-full h-full absolute">
-        <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
+      {/* Background Video */}
+      <div className="w-full h-full absolute z-[-10] opacity-30">
+        <div className="w-full h-full absolute flex items-center justify-center bg-cover">
           <video
             className="w-full h-auto"
-            preload="false"
+            preload="auto"
             playsInline
             loop
             muted
