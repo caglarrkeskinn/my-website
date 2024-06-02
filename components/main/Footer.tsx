@@ -12,19 +12,27 @@ const Footer = () => {
   return (
     <div className="w-full bg-transparent text-gray-200 shadow-lg p-4 md:p-6 lg:p-8">
       <div className="flex flex-col items-center justify-center w-full">
-        <div className="flex flex-col md:flex-row w-full items-center justify-around flex-wrap mb-4">
-
-          <div className="min-w-[200px] flex flex-col items-center mb-6 md:mb-0">
+        <div className="flex flex-col md:flex-row w-full items-center justify-around flex-wrap mb-4 gap-6 md:gap-0">
+          <div className="min-w-[200px] flex flex-col items-center">
             <div className="font-bold text-lg">Socials</div>
-            <a href="https://www.instagram.com/caglarr.keskinn" className="flex items-center my-2 cursor-pointer">
+            <a
+              href="https://www.instagram.com/caglarr.keskinn"
+              className="flex items-center my-2 cursor-pointer"
+            >
               <FaInstagram />
               <span className="ml-2 text-base">Instagram</span>
             </a>
-            <a href="https://medium.com/@caglarrkeskinn" className="flex items-center my-2 cursor-pointer">
+            <a
+              href="https://medium.com/@caglarrkeskinn"
+              className="flex items-center my-2 cursor-pointer"
+            >
               <FaMedium />
               <span className="ml-2 text-base">Medium</span>
             </a>
-            <a href="https://www.linkedin.com/in/caglarrkeskinn/" className="flex items-center my-2 cursor-pointer">
+            <a
+              href="https://www.linkedin.com/in/caglarrkeskinn/"
+              className="flex items-center my-2 cursor-pointer"
+            >
               <FaLinkedin />
               <span className="ml-2 text-base">LinkedIn</span>
             </a>

@@ -1,5 +1,6 @@
 import '@/app/globals.css'; 
 import Skills from '@/components/main/Skills';
+import VideoContent from '@/components/sub/VideoContent';
 
 export default function Login() {
     return (

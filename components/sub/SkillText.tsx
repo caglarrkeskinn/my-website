@@ -9,7 +9,7 @@ const SkillText = () => {
     <div className='w-full h-auto flex flex-col items-center justify-center'>
       <motion.div
         variants={slideInFromLeft(0.5)}
-        className='text-3xl md:text-4xl lg:text-5xl text-white font-medium mt-10 md:mt-20 mb-6 text-center'
+        className="text-[24px] md:text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-10 md:py-20 text-shadow-custom text-center"
       >
         Making apps with modern technologies
       </motion.div>

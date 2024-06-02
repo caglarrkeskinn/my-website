@@ -1,5 +1,7 @@
 import '@/app/globals.css'; 
+import Hero from '@/components/main/Hero';
 import Projects from '@/components/main/Projects';
+import VideoContent from '@/components/sub/VideoContent';
 
 export default function Login() {
     return (

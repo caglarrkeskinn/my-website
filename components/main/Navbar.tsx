@@ -19,22 +19,22 @@ const Navbar = () => {
           </span>
         </a>
 
-        <div className=" flex flex-row gap-3 md:gap-5 ">
-          <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] rounded-full text-gray-200">
-            <a href="/about-me" className="cursor-pointer px-2">
-              About
-            </a>
+        <div className="flex flex-row gap-3 md:gap-5">
+            <div className="navbar-button">
+                <a href="/about-me">
+                    About
+                </a>
             </div>
-            <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] rounded-full text-gray-200">
-            <a href="/skills" className="cursor-pointer px-2">
-              Skills
-            </a>
+            <div className="navbar-button">
+                <a href="/skills">
+                    Skills
+                </a>
             </div>
-            <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] rounded-full text-gray-200">
-            <a href="/projects" className="cursor-pointer px-2">
-              Projects
-            </a>
-          </div>
+            <div className="navbar-button">
+                <a href="/projects">
+                    Projects
+                </a>
+            </div>
         </div>
 
         <div className="flex flex-row gap-3 md:gap-5">
