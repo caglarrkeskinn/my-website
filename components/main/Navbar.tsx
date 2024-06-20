@@ -17,38 +17,36 @@ const Navbar = () => {
         </a>
 
         <div className="flex flex-row gap-3 md:gap-5">
-            <div className="navbar-button">
-                <a href="/about-me">
-                    About
-                </a>
-            </div>
-            <div className="navbar-button">
-                <a href="/skills">
-                    Skills
-                </a>
-            </div>
-            <div className="navbar-button">
-                <a href="/projects">
-                    Projects
-                </a>
-            </div>
+          <div className="navbar-button">
+            <a href="/about-me">
+              About
+            </a>
+          </div>
+          <div className="navbar-button">
+            <a href="/skills">
+              Skills
+            </a>
+          </div>
+          <div className="navbar-button">
+            <a href="/projects">
+              Projects
+            </a>
+          </div>
         </div>
 
         <div className="flex flex-row gap-3 md:gap-5">
-        
           {Socials.map((social) => (
-            <div className="navbar-button">
-            <a href={social.url} target="_blank" rel="noopener noreferrer" key={social.name}>
-              <Image
-                src={social.src}
-                alt={social.name}
-                width={24}
-                height={24}
-              />
-            </a>
+            <div className="navbar-button" key={social.name}>
+              <a href={social.url} target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={social.src}
+                  alt={social.name}
+                  width={24}
+                  height={24}
+                />
+              </a>
             </div>
           ))}
-        
         </div>
       </div>
     </div>
