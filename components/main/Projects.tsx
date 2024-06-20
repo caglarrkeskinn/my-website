@@ -9,23 +9,12 @@ const Projects = () => {
       </h1>
       <div className="w-full flex flex-col lg:flex-row  gap-10 px-5 md:px-10">
         <ProjectCard
-          src="/NextWebsite.png"
-          title="Modern Next.js Portfolio"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          url="https://www.google.com"
+          src="/github-142-svgrepo-com.svg"
+          title=""
+          description="You can visit my GitHub account to see my projects."
+          url="https://github.com/caglarrkeskinn"
         />
-        <ProjectCard
-          src="/CardImage.png"
-          title="Interactive Website Cards"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          url="https://www.google.com"
-        />
-        <ProjectCard
-          src="/SpaceWebsite.png"
-          title="Space Themed Website"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          url="https://www.google.com"
-        />
+       
       </div>
     </div>
   );

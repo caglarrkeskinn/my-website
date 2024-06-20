@@ -10,13 +10,10 @@ const Navbar = () => {
           <Image
             src="/NavLogo.png"
             alt="logo"
-            width={50}
-            height={50}
-            className="cursor-pointer hover:animate-slowspin"
+            width={120}
+            height={120}
+            className="cursor-pointer"
           />
-          <span className="font-bold ml-2 md:ml-4 text-gray-300 hidden md:block">
-            Caglar Keskin
-          </span>
         </a>
 
         <div className="flex flex-row gap-3 md:gap-5">
@@ -38,7 +35,9 @@ const Navbar = () => {
         </div>
 
         <div className="flex flex-row gap-3 md:gap-5">
+        
           {Socials.map((social) => (
+            <div className="navbar-button">
             <a href={social.url} target="_blank" rel="noopener noreferrer" key={social.name}>
               <Image
                 src={social.src}
@@ -47,7 +46,9 @@ const Navbar = () => {
                 height={24}
               />
             </a>
+            </div>
           ))}
+        
         </div>
       </div>
     </div>

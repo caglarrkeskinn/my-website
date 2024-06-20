@@ -18,6 +18,7 @@ const Footer = () => {
             <a
               href="https://www.instagram.com/caglarr.keskinn"
               className="flex items-center my-2 cursor-pointer"
+              target="_blank"
             >
               <FaInstagram />
               <span className="ml-2 text-base">Instagram</span>
@@ -25,6 +26,7 @@ const Footer = () => {
             <a
               href="https://medium.com/@caglarrkeskinn"
               className="flex items-center my-2 cursor-pointer"
+              target="_blank"
             >
               <FaMedium />
               <span className="ml-2 text-base">Medium</span>
@@ -32,6 +34,7 @@ const Footer = () => {
             <a
               href="https://www.linkedin.com/in/caglarrkeskinn/"
               className="flex items-center my-2 cursor-pointer"
+              target="_blank"
             >
               <FaLinkedin />
               <span className="ml-2 text-base">LinkedIn</span>

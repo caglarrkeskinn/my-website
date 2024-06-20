@@ -10,7 +10,7 @@ export default function AboutMe() {
             {/* <VideoContent /> */}
             <Hero />
             <Link 
-                href="/CaglarKeskinCV.pdf" 
+                href="/CaglarKeskin.pdf" 
                 className="inline-block px-4 py-1 mt-8 text-lg md:text-2xl font-bold text-cyan-400 bg-gradient-to-r from-purple-500 to-cyan-500 border-1 border-sky-500 rounded-lg hover:bg-sky-500 hover:border-black hover:text-white transition-colors duration-500 ease-in-out"
                 target='_blank'
             >
