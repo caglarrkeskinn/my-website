@@ -20,25 +20,33 @@ const HeroContent = () => {
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
           variants={slideInFromTop}
-          className="Welcome-box py-2 px-3 border border-[#7042f88b] opacity-[0.9] flex items-center"
+          className="Welcome-box py-2 px-3 border border-[#7042f88b] bg-[#7042f88b] opacity-[0.9] flex items-center"
         >
           <SparklesIcon className="text-[#b49bff] mr-2 h-5 w-5 " />
           <h1 className="Welcome-text text-sm md:text-base ">
-            Caglar Keskin Portfolio
+            Who is Caglar?
           </h1>
         </motion.div>
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-3xl md:text-5xl lg:text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-6 mt-6 text-xl md:text-2xl lg:text-3xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
-            Providing
+            Graduated from
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               {" "}
-              the best{" "}
+              Bahcesehir University{" "}
             </span>
-            project experience
+            with a degree in 
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+              {" "}
+              Economics{" "}
+            </span> and 
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+              {" "}
+              Software Engineering.{" "}
+            </span>
           </span>
         </motion.div>
 
@@ -46,8 +54,7 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-base md:text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          I&apos;m a Full Stack Software Engineer with experience in Website,
-          Mobile, and Software development. Check out my projects and skills.
+          Specializing in Java, Spring Boot and PostgreSQL
         </motion.p>
         {/* <motion.a
           variants={slideInFromLeft(1)}

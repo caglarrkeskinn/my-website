@@ -1,22 +1,30 @@
+"use client";
 import { Socials } from "@/constants";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import { FaBars } from "react-icons/fa"; // FontAwesome'dan hamburger menüsü ikonu ekleyin
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-4 md:px-10">
-      <div className="w-full h-full flex flex-row items-center justify-between m-auto">
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50">
+      <div className="w-full h-full flex flex-row items-center justify-between m-auto ">
         <a href="/about-me" className="flex items-center">
           <Image
             src="/NavLogo.png"
             alt="logo"
-            width={120}
-            height={120}
+            width={65}
+            height={65}
             className="cursor-pointer"
           />
         </a>
 
-        <div className="flex flex-row gap-3 md:gap-5">
+        <div className="hidden md:flex flex-row gap-3 md:gap-5 justify-center">
           <div className="navbar-button">
             <a href="/about-me">
               About
@@ -32,9 +40,20 @@ const Navbar = () => {
               Projects
             </a>
           </div>
+          <div className="navbar-button">
+            <a href="/contact">
+              Contact
+            </a>
+          </div>
+
+          <div className="navbar-button">
+            <a href="/news">
+              News
+            </a>
+          </div>
         </div>
 
-        <div className="flex flex-row gap-3 md:gap-5">
+        <div className="hidden md:flex flex-row gap-3 md:gap-5">
           {Socials.map((social) => (
             <div className="navbar-button" key={social.name}>
               <a href={social.url} target="_blank" rel="noopener noreferrer">
@@ -43,10 +62,60 @@ const Navbar = () => {
                   alt={social.name}
                   width={24}
                   height={24}
+                  className="cursor-pointer"
                 />
               </a>
             </div>
           ))}
+        </div>
+
+        <div className="md:hidden flex items-center">
+          <button onClick={toggleMenu} className="text-white focus:outline-none px-4">
+            <FaBars size={24} />
+          </button>
+        </div>
+      </div>
+
+      <div
+        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
+          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={toggleMenu}
+      ></div>
+
+      <div
+        className={`fixed top-[65px] right-0 w-2/7 max-w-xs bg-[#03001417] backdrop-blur-md shadow-lg rounded-lg p-4 transform transition-transform duration-300 z-50 ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex flex-col items-center gap-3">
+          <div className="navbar-button">
+            <a href="/about-me">About</a>
+          </div>
+          <div className="navbar-button">
+            <a href="/skills">Skills</a>
+          </div>
+          <div className="navbar-button">
+            <a href="/projects">Projects</a>
+          </div>
+          <div className="navbar-button">
+            <a href="/contact">Contact</a>
+          </div>
+          <div className="flex flex-row gap-3 md:gap-5">
+            {Socials.map((social) => (
+              <div className="navbar-button" key={social.name}>
+                <a href={social.url} target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src={social.src}
+                    alt={social.name}
+                    width={24}
+                    height={24}
+                    className="cursor-pointer"
+                  />
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

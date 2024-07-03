@@ -1,5 +1,6 @@
 import React from "react";
 import ProjectCard from "../sub/ProjectCard";
+import PdfUploader from "../sub/PdfUploader"; // PdfUploader bileşenini import edin
 
 const Projects = () => {
   return (
@@ -8,14 +9,16 @@ const Projects = () => {
         My Projects
       </h1>
       <div className="w-full flex flex-col lg:flex-row  gap-10 px-5 md:px-10">
+        
         <ProjectCard
-          src="/github-142-svgrepo-com.svg"
-          title=""
-          description="You can visit my GitHub account to see my projects."
-          url="https://github.com/caglarrkeskinn"
+          src="/converter-icon.png"  
+          title="PDF to Word Converter"
+          description=""
+          url="/converter" 
         />
-       
+        
       </div>
+
     </div>
   );
 };

@@ -10,15 +10,16 @@ import {
 
 const Footer = () => {
   return (
-    <div className="w-full bg-transparent text-gray-200 shadow-lg p-4 md:p-6 lg:p-8">
+    <div className="w-full shadow-lg shadow-[#2A0E61]/50 bg-[#0301212] z-50 text-gray-200 shadow-lg p-4 md:p-6 lg:p-8 ">
       <div className="flex flex-col items-center justify-center w-full">
-        <div className="flex flex-col md:flex-row w-full items-center justify-around flex-wrap mb-4 gap-6 md:gap-0">
-          <div className="min-w-[200px] flex flex-col items-center">
+        <div className="flex flex-row w-full items-center justify-around flex-wrap mb-4 gap-6">
+          <div className="min-w-[120px] flex flex-col items-center">
             <div className="font-bold text-lg">Socials</div>
             <a
               href="https://www.instagram.com/caglarr.keskinn"
               className="flex items-center my-2 cursor-pointer"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <FaInstagram />
               <span className="ml-2 text-base">Instagram</span>
@@ -27,6 +28,7 @@ const Footer = () => {
               href="https://medium.com/@caglarrkeskinn"
               className="flex items-center my-2 cursor-pointer"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <FaMedium />
               <span className="ml-2 text-base">Medium</span>
@@ -35,13 +37,14 @@ const Footer = () => {
               href="https://www.linkedin.com/in/caglarrkeskinn/"
               className="flex items-center my-2 cursor-pointer"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <FaLinkedin />
               <span className="ml-2 text-base">LinkedIn</span>
             </a>
           </div>
 
-          <div className="min-w-[200px] flex flex-col items-center">
+          <div className="min-w-[120px] flex flex-col items-center">
             <div className="font-bold text-lg">Contact</div>
             <a href="tel:+905312654845" className="flex items-center my-2 cursor-pointer">
               <FaPhone />
@@ -63,7 +66,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="text-base text-center">
+        <div className="text-base text-center text-xs">
           &copy; Copyright 2024. All Rights Reserved
         </div>
       </div>

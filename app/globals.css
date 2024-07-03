@@ -3,11 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .cursive {
   font-family: "Cedarville Cursive", cursive;
 }
+
 .Welcome-text {
   background: linear-gradient(
       0deg,
@@ -20,6 +19,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .Welcome-box {
   isolation: isolate;
   overflow: hidden;
@@ -29,7 +29,6 @@
   border-radius: 32px;
   box-shadow: inset 0 -7px 11px #a48fff1f;
   display: flex;
-
   position: relative;
   width: -moz-max-content;
   width: max-content;
@@ -45,6 +44,7 @@
     rgba(113, 47, 255, 0.12);
   box-shadow: inset 0 0 12px #bf97ff3d;
 }
+
 .button-primary:hover {
   background: linear-gradient(
       180deg,
@@ -60,11 +60,10 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
-
-
 
 html {
   scroll-behavior: smooth;
@@ -80,28 +79,39 @@ html {
   justify-content: center;
   width: 100%;
   height: 30px;
-  border: 1px solid #7042f861;
-  background-color: #0300145e;
   border-radius: 9999px; /* This keeps the buttons rounded */
-  text-decoration: none;
-  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+  color: #fff;
 }
 
 .navbar-button a {
-  color: #fff; /* Text color */
-  padding: 0.5rem 1rem; /* Padding inside the link */
-  text-decoration: none;
-  cursor: pointer;
-  transition: color 0.5s ease-in-out;
-  font-weight: bold;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.navbar-button:hover {
-  background-color: grey;
-
+.navbar-button a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
 }
 
-.navbar-button:hover a {
-  color: white;
+@media (max-width: 768px) {
+  .navbar-button a {
+    padding: 0.25rem;
+  }
+
+  .navbar-button img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .md\\:hidden {
+    display: flex;
+  }
+
+  .hidden.md\\:flex {
+    display: none;
+  }
 }

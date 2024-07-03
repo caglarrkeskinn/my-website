@@ -7,7 +7,6 @@ import { FaDownload, FaFilePdf, FaLink } from 'react-icons/fa';
 export default function AboutMe() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
-            {/* <VideoContent /> */}
             <Hero />
             <Link 
                 href="/CaglarKeskin.pdf" 
