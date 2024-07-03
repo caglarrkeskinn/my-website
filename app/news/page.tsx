@@ -2,11 +2,19 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+interface Article {
+    title: string;
+    description: string;
+    url: string;
+    urlToImage: string;
+}
+
 export default function JavaTechNews() {
-    const [articles, setArticles] = useState([]);
+    
+    const [articles, setArticles] = useState<Article[]>([]);
     const [displayedArticles, setDisplayedArticles] = useState(12);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchNews = async () => {
