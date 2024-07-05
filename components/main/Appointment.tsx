@@ -13,7 +13,8 @@ export default function Appointment() {
 
     const [popup, setPopup] = useState({
         visible: false,
-        content: ''
+        content: '',
+        header: ''
     });
 
     const handleInputChange = (e: { target: { id: any; value: any; }; }) => {
@@ -34,7 +35,8 @@ export default function Appointment() {
             if (response.ok) {
                 setPopup({
                     visible: true,
-                    content: `Appointment successfully scheduled on ${formData.date} at ${formData.time}.`
+                    content: `Appointment successfully scheduled on ${formData.date} at ${formData.time}.`,
+                    header: 'Appointment Scheduled'
                 });
                 console.log('Appointment created successfully');
             } else {
@@ -44,7 +46,8 @@ export default function Appointment() {
                 }
                 setPopup({
                     visible: true,
-                    content: errorMessage
+                    content: errorMessage,
+                    header: 'Appointment NOT Scheduled!'
                 });
                 console.error('Error creating appointment', response.status);
             }
@@ -52,12 +55,14 @@ export default function Appointment() {
             if (error.message.includes('Failed to fetch')) {
                 setPopup({
                     visible: true,
-                    content: 'Server Connection Error. Please try again later.'
+                    content: 'Server Connection Error. Please try again later.',
+                    header: 'Appointment NOT Scheduled!'
                 });
             } else {
                 setPopup({
                     visible: true,
-                    content: 'Error while scheduling appointment. Please try again later.'
+                    content: 'Error while scheduling appointment. Please try again later.',
+                    header: 'Appointment NOT Scheduled!'
                 });
                 console.error('Error creating appointment:', error);
             }
@@ -65,7 +70,7 @@ export default function Appointment() {
     };
 
     const closePopup = () => {
-        setPopup({ visible: false, content: '' });
+        setPopup({ visible: false, content: '', header: '' });
     };
 
     return (
@@ -132,7 +137,7 @@ export default function Appointment() {
             {popup.visible && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="bg-white p-4 rounded-lg shadow-lg">
-                        <h3 className="text-xl font-bold mb-2">Appointment Scheduled</h3>
+                        <h3 className="text-xl font-bold mb-2">{popup.header}</h3>
                         <p>{popup.content}</p>
                         <button
                             onClick={closePopup}

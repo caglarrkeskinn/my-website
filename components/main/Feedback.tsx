@@ -5,7 +5,8 @@ export default function Feedback() {
     const [feedbackMessage, setFeedbackMessage] = useState('');
     const [popup, setPopup] = useState({
         visible: false,
-        content: ''
+        content: '',
+        header: ''
     });
 
     const handleFeedbackSubmit = async () => {
@@ -21,7 +22,8 @@ export default function Feedback() {
             if (response.ok) {
                 setPopup({
                     visible: true,
-                    content: 'Thank you for your feedback!'
+                    content: 'Thank you for your feedback!',
+                    header: 'Feedback Submitted'
                 });
                 console.log('Feedback submitted successfully');
             } else {
@@ -31,21 +33,23 @@ export default function Feedback() {
                 }
                 setPopup({
                     visible: true,
-                    content: errorMessage
+                    content: errorMessage,
+                    header: 'Feedback NOT Submitted!'
                 });
                 console.error('Failed to submit feedback', response.status);
             }
         } catch (error : any) {
-
             if (error.message.includes('Failed to fetch')) {
                 setPopup({
                     visible: true,
-                    content: 'Server Connection Error. Please try again later.'
+                    content: 'Server Connection Error. Please try again later.',
+                    header: 'Feedback NOT Submitted!'
                 });
             } else {
                 setPopup({
                     visible: true,
-                    content: 'Error while submitting feedback. Please try again later.'
+                    content: 'Error while submitting feedback. Please try again later.',
+                    header: 'Feedback NOT Submitted!'
                 });
                 console.error('Error while submitting feedback:', error);
             }
@@ -53,7 +57,7 @@ export default function Feedback() {
     };
 
     const closePopup = () => {
-        setPopup({ visible: false, content: '' });
+        setPopup({ visible: false, content: '', header: '' });
     };
 
     return (
@@ -74,7 +78,7 @@ export default function Feedback() {
             {popup.visible && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="bg-white p-4 rounded-lg shadow-lg">
-                        <h3 className="text-xl font-bold mb-2">Feedback Submitted</h3>
+                        <h3 className="text-xl font-bold mb-2">{popup.header}</h3>
                         <p>{popup.content}</p>
                         <button
                             onClick={closePopup}
