@@ -8,7 +8,7 @@ const VideoContent = () => {
         muted
         loop
         playsInline
-        className="rotate-180 absolute top-[-43%] h-full w-full left-0 z-[0]"
+        className="rotate-180 absolute top-[-42%] h-full w-full left-0 z-[0]"
       >
         <source src="/blackhole.webm" type="video/webm" />
       </video>
