@@ -6,7 +6,7 @@ import Feedback from '@/components/main/Feedback';
 
 export default function Contact() {
     const [showFeedbackModal, setShowFeedbackModal] = useState(false);
-    const [activeTab, setActiveTab] = useState('appointment'); // Default active tab
+    const [activeTab, setActiveTab] = useState('appointment'); 
 
     useEffect(() => {
         const handleBeforeUnload = (event: { preventDefault: () => void; returnValue: string; }) => {

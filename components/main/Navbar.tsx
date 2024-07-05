@@ -46,11 +46,6 @@ const Navbar = () => {
             </a>
           </div>
 
-          <div className="navbar-button">
-            <a href="/news">
-              News
-            </a>
-          </div>
         </div>
 
         <div className="hidden md:flex flex-row gap-3 md:gap-5">

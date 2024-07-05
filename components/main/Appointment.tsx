@@ -38,10 +38,29 @@ export default function Appointment() {
                 });
                 console.log('Appointment created successfully');
             } else {
-                console.error('Error creating appointment');
+                let errorMessage = 'Failed to schedule appointment. Please try again later.';
+                if (response.status >= 500) {
+                    errorMessage = 'Server error. Please try again later.';
+                }
+                setPopup({
+                    visible: true,
+                    content: errorMessage
+                });
+                console.error('Error creating appointment', response.status);
             }
-        } catch (error) {
-            console.error('Error creating appointment', error);
+        } catch (error : any) {
+            if (error.message.includes('Failed to fetch')) {
+                setPopup({
+                    visible: true,
+                    content: 'Server Connection Error. Please try again later.'
+                });
+            } else {
+                setPopup({
+                    visible: true,
+                    content: 'Error while scheduling appointment. Please try again later.'
+                });
+                console.error('Error creating appointment:', error);
+            }
         }
     };
 

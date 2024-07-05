@@ -17,6 +17,7 @@ export default function Feedback() {
                 },
                 body: JSON.stringify({ feedbackMessage: feedbackMessage }),
             });
+
             if (response.ok) {
                 setPopup({
                     visible: true,
@@ -24,10 +25,30 @@ export default function Feedback() {
                 });
                 console.log('Feedback submitted successfully');
             } else {
-                console.error('Failed to submit feedback');
+                let errorMessage = 'Failed to submit feedback. Please try again later.';
+                if (response.status >= 500) {
+                    errorMessage = 'Server error. Please try again later.';
+                }
+                setPopup({
+                    visible: true,
+                    content: errorMessage
+                });
+                console.error('Failed to submit feedback', response.status);
             }
-        } catch (error) {
-            console.error('Error while submitting feedback:', error);
+        } catch (error : any) {
+
+            if (error.message.includes('Failed to fetch')) {
+                setPopup({
+                    visible: true,
+                    content: 'Server Connection Error. Please try again later.'
+                });
+            } else {
+                setPopup({
+                    visible: true,
+                    content: 'Error while submitting feedback. Please try again later.'
+                });
+                console.error('Error while submitting feedback:', error);
+            }
         }
     };
 
