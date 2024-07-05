@@ -25,21 +25,25 @@ const Navbar = () => {
         </a>
 
         <div className="hidden md:flex flex-row gap-3 md:gap-5 justify-center">
+
           <div className="navbar-button">
             <a href="/about-me">
               About
             </a>
           </div>
+
           <div className="navbar-button">
             <a href="/skills">
               Skills
             </a>
           </div>
+
           <div className="navbar-button">
             <a href="/projects">
               Projects
             </a>
           </div>
+
           <div className="navbar-button">
             <a href="/contact">
               Contact
